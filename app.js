@@ -73,3 +73,20 @@ const createPokemonBox=(pokemon)=>{
 }
 
 initPokemon();
+
+searchInput.addEventListener("input",(e)=>{
+    const search = searchInput.value.toLowerCase();
+    const pokeNames = document.querySelectorAll(".poke-name");
+  
+    pokeNames.forEach((pokeName) =>{
+        pokeName.parentElement.style.display="block";
+
+        if(!pokeName.innerHTML.toLowerCase().includes(search)){
+            pokeName.parentElement.style.display="none";
+        }
+
+    })
+  
+
+
+})
